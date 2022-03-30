@@ -8,6 +8,7 @@ User can add information about series, update and delete them.
 Base URL - https://api-iasip.herokuapp.com/
 
 Resource: /api/episodes/
+
 Body:
 
 {"episode_name": "The Gang Tries Desperately to Win an Award",
@@ -27,6 +28,7 @@ Body:
 Base URL - https://api-iasip.herokuapp.com/
 
 Resource: /api/episodes/
+
 Параметр для запроса: episodes_id
 
 Ответ:
@@ -55,6 +57,7 @@ Resource: /api/episodes/
 Base URL - https://api-iasip.herokuapp.com/
 
 Resource: /api/episodes/
+
 Параметр для запроса: episode_id
 
 Body:
