@@ -1,30 +1,50 @@
-from flask_restful import Resource, reqparse
+from flask_restful import Resource, reqparse, abort
 from episodes_list import episodes
-
-parser = reqparse.RequestParser()
-parser.add_argument('test', type=str)
-parser.add_argument('test2', type=str)
+from flask import request
 
 
 class Main(Resource):
-    def get(self, episode_id=0):
+    """Метод GET. В запросе указываем параметр episodes_id.
+    episodes_id = 0 возвращает список всех эпизодов.
+    Если указан отсутствущий episode_id - возвращается информационное сообщение"""
+
+    def get(self):
+        episode_id = request.args.get('episode_id', type=int)
+        print(episode_id)
         if episode_id == 0:
             return episodes
+        elif episode_id not in episodes.keys():
+            abort(404, message="This episode doesn't exist")
         else:
             return episodes[episode_id]
 
-    def delete(self, episode_id):
+    """Метод удаляет указанный в параметрах запроса эпизод"""
+
+    def delete(self):
+        episode_id = request.args.get('episode_id', type=int)
         del episodes[episode_id]
         return episodes
 
-    def post(self, episode_id):
-        episodes[episode_id] = parser.parse_args()
-        return episodes
+    """Метод позволяет добавлять эпизоды"""
 
-    '''/api/episodes/3, {'test': 'test', 'test2': 'test'}'''
+    def post(self):
+        episode_id = request.args.get('episode_id', type=int)
+        content_type = request.headers.get('Content-Type')
+        if content_type == 'application/json':
+            json = request.json
+            episodes[episode_id] = json
+            return episodes
+        else:
+            abort(415, message="Unsupported Media Type")
 
-    def put(self, episode_id):
-        episodes[episode_id] = parser.parse_args()
-        return episodes
+    """Изменяем описания уже добавленных эпизодов"""
 
-    '''/api/episodes/3, {'test': 'test', 'test2': 'test'}'''
+    def put(self):
+        episode_id = request.args.get('episode_id', type=int)
+        content_type = request.headers.get('Content-Type')
+        if content_type == 'application/json':
+            json = request.json
+            episodes[episode_id] = json
+            return episodes
+        else:
+            abort(415, message="Unsupported Media Type")
