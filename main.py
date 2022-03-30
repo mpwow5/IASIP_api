@@ -47,7 +47,13 @@ class Main(Resource):
                 abort(404, message="This episode doesn't exist")
             else:
                 json = request.json
-                episodes[episode_id] = json
+                #  В переданных параметрах получаем json. Находим эпизод по episode_id и перебираем ключи в полученном
+                #  json и сверяем с ключами в словаре эпизода. Если есть совпадения, перезаписываем
+                #  старые значения значениями из полученного json
+                for key in json:
+                    for key2 in episodes[episode_id]:
+                        if key == key2:
+                            episodes[episode_id][key2] = json[key]
                 return episodes[episode_id]
         else:
             abort(415, message="Unsupported Media Type")
