@@ -21,7 +21,7 @@ Body:
  "storyline": "Once again, Paddys is passed up by the Philadelphia Free Press annual \"Best Bar In Philadelphia\" competition. So to win the award, the gang goes to the bar that did win the award in an attempt to stake out the competition."}
  
 
-#Метод GET
+# Метод GET
 
 Base URL - https://api-iasip.herokuapp.com/
 Resource: /api/episodes/
@@ -48,7 +48,7 @@ Resource: /api/episodes/
 	
 }
 
-Метод PUT
+# Метод PUT
 
 Base URL - https://api-iasip.herokuapp.com/
 Resource: /api/episodes/
@@ -71,7 +71,7 @@ Body:
 }
 
 
-Метод DELETE
+# Метод DELETE
 
 Base URL - https://api-iasip.herokuapp.com/
 Resource: /api/episodes/
