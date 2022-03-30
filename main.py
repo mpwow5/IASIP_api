@@ -28,10 +28,10 @@ class Main(Resource):
     """Метод позволяет добавлять эпизоды"""
 
     def post(self):
-        episode_id = request.args.get('episode_id', type=int)
         content_type = request.headers.get('Content-Type')
         if content_type == 'application/json':
             json = request.json
+            episode_id = json['episode_id']
             episodes[episode_id] = json
             return episodes
         else:
@@ -43,8 +43,11 @@ class Main(Resource):
         episode_id = request.args.get('episode_id', type=int)
         content_type = request.headers.get('Content-Type')
         if content_type == 'application/json':
-            json = request.json
-            episodes[episode_id] = json
-            return episodes
+            if episode_id not in episodes.keys():
+                abort(404, message="This episode doesn't exist")
+            else:
+                json = request.json
+                episodes[episode_id] = json
+                return episodes[episode_id]
         else:
             abort(415, message="Unsupported Media Type")

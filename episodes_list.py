@@ -1,5 +1,6 @@
 episodes = {
     1: {"episode_name": "Charlie Work",
+        "episode_id": 1,
         "season": 10,
         "number in season": 4,
         "number overall": 108,
@@ -9,6 +10,7 @@ episodes = {
         "original air date": {"year": 2015, "month": "February", "day": 4},
         "storyline": "Charlie is determined to make sure Paddy\"s Pub passes its health inspection."},
     2: {"episode_name": "The Nightman Cometh",
+        "episode_id": 2,
         "season": 4,
         "number in season": 13,
         "number overall": 45,
@@ -19,6 +21,7 @@ episodes = {
         "storyline": "Charlie stages a rock opera based on his song \"Nightman,\" and recruits the rest of the gang to "
                      "help him with it."},
     3: {"episode_name": "The Gang Goes to a Water Park",
+        "episode_id": 3,
         "season": 12,
         "number in season": 2,
         "number overall": 126,
@@ -31,6 +34,7 @@ episodes = {
                      "are determined to ride every ride by any means necessary and Mac and Dee get stuck in a tube "
                      "slide for most of the day."},
     4: {"episode_name": "Hero or Hate Crime?",
+        "episode_id": 4,
         "season": 12,
         "number in season": 6,
         "number overall": 130,
@@ -41,6 +45,7 @@ episodes = {
         "storyline": "The gang go to a professional arbitrator to decide who\"s the rightful "
                      "owner of a scratch-off lottery ticket."},
     5: {"episode_name": "The D.E.N.N.I.S. System",
+        "episode_id": 5,
         "season": 5,
         "number in season": 10,
         "number overall": 55,
