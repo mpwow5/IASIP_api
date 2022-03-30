@@ -6,6 +6,7 @@ User can add information about series, update and delete them.
 
 Запрос:
 Base URL - https://api-iasip.herokuapp.com/
+
 Resource: /api/episodes/
 Body:
 
@@ -24,6 +25,7 @@ Body:
 # Метод GET
 
 Base URL - https://api-iasip.herokuapp.com/
+
 Resource: /api/episodes/
 Параметр для запроса: episodes_id
 
@@ -51,6 +53,7 @@ Resource: /api/episodes/
 # Метод PUT
 
 Base URL - https://api-iasip.herokuapp.com/
+
 Resource: /api/episodes/
 Параметр для запроса: episode_id
 
@@ -74,6 +77,7 @@ Body:
 # Метод DELETE
 
 Base URL - https://api-iasip.herokuapp.com/
+
 Resource: /api/episodes/
 
 В body передаем episode_id который необходимо удалить
