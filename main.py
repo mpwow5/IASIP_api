@@ -54,6 +54,6 @@ class Main(Resource):
                     for key2 in episodes[episode_id]:
                         if key == key2:
                             episodes[episode_id][key2] = json[key]
-                return episodes[episode_id]
+                return {"message": "Episode successfuly updated"}
         else:
             abort(415, message="Unsupported Media Type")
