@@ -1,4 +1,4 @@
-from flask_restful import Resource, reqparse, abort
+from flask_restful import Resource, abort
 from episodes_list import episodes
 from flask import request
 
@@ -21,9 +21,9 @@ class Main(Resource):
     """Метод удаляет указанный в параметрах запроса эпизод"""
 
     def delete(self):
-        episode_id = request.args.get('episode_id', type=int)
+        episode_id = request.json['episode_id']
         del episodes[episode_id]
-        return episodes
+        return {"message": "Episode successfuly deleted"}
 
     """Метод позволяет добавлять эпизоды"""
 
