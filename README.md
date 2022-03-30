@@ -34,6 +34,7 @@ Resource: /api/episodes/
 Ответ:
 
 Статус 200. Успешный запрос
+
 {"episode_name": "The Gang Tries Desperately to Win an Award",
  "episode_id":6,
  "season": 9,
