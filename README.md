@@ -1,3 +1,5 @@
-# IASIP_api
-An API showing all the episodes of It's Always Sunny in Philadelphia (TV series) and the corresponding video.
-Version 0.2 shows only 10 top-rated episodes
+# It's Always Sunny in Philadelphia API
+An API showing information about top 5 episodes of It's Always Sunny in Philadelphia (TV series).
+User can add information about series, update and delete them.
+
+
