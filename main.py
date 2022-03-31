@@ -22,8 +22,11 @@ class Main(Resource):
 
     def delete(self):
         episode_id = request.json['episode_id']
-        del episodes[episode_id]
-        return {"message": "Episode successfuly deleted"}
+        if episode_id not in episodes.keys():
+            abort(404, message="This episode doesn't exist")
+        else:
+            del episodes[episode_id]
+            return {"message": "Episode successfuly deleted"}
 
     """Метод позволяет добавлять эпизоды"""
 
