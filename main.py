@@ -36,7 +36,7 @@ class Main(Resource):
             json = request.json
             episode_id = json['episode_id']
             episodes[episode_id] = json
-            return episodes
+            return {"status": "Episode added", "episode_id": episode_id}
         else:
             abort(415, message="Unsupported Media Type")
 
