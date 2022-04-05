@@ -7,7 +7,6 @@ class Main(Resource):
 
     def get(self):
         episode_id = request.args.get('episode_id', type=int)
-        print(episode_id)
         if episode_id == 0:
             return episodes
         elif episode_id not in episodes.keys():
